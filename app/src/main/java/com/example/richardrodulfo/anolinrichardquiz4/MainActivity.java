@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             fos = new FileOutputStream(file);
             fos.write((txtName.getText().toString() + ",").getBytes());
             fos.write(txtPassword.getText().toString().getBytes());
+            fos.write(txtEmail.getText().toString().getBytes());
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
     public void onLogin (View v){
         Intent i = new Intent(this, second.class);
         startActivity(i);
+
     }
+
 
 }
